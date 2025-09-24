@@ -1,7 +1,7 @@
 <script>
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import drinking from "../assets/drinking.mp4";
+import drinking from "../assets/drinking.webm";
 
 gsap.registerPlugin(ScrollTrigger);
 
