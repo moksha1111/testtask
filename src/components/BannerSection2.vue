@@ -20,24 +20,20 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 onMounted(() => {
-  // Image: comes from top + scale
   gsap.from(".image2", {
-    y: "-100%", // off-screen top
-    scale: 0.5, // smaller
+    x: "-100%", // start completely off-screen left
     opacity: 0,
     duration: 1.5,
     scrollTrigger: {
       trigger: ".background2",
-      start: "top bottom",
+      start: "top bottom", // when the background enters the viewport
       end: "center center",
-      scrub: true,
+      scrub: true, // smooth scroll animation
     },
   });
 
-  // Text: comes from bottom + scale
   gsap.from(".sprite-text2", {
-    y: "100%", // off-screen bottom
-    scale: 0.5, // smaller
+    x: "100%", // off-screen right
     opacity: 0,
     duration: 1.5,
     scrollTrigger: {
