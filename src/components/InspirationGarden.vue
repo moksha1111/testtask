@@ -50,6 +50,26 @@ export default {
     },
   },
   mounted() {
+    const lazyCards = this.$el.querySelectorAll(".lazy-bg");
+
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            const bg = el.dataset.bg;
+            if (bg) {
+              el.style.backgroundImage = `url(${bg})`;
+              el.classList.remove("lazy-bg");
+              obs.unobserve(el); // stop watching after load
+            }
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    lazyCards.forEach((card) => observer.observe(card));
     gsap.utils.toArray(".statue-card").forEach((card, i) => {
       gsap.from(card, {
         skewX: 20,
@@ -77,8 +97,8 @@ export default {
         <div
           v-for="(card, idx) in cards"
           :key="idx"
-          class="statue-card"
-          :style="{ backgroundImage: `url(${card.img})` }"
+          class="statue-card lazy-bg"
+          :data-bg="card.img"
           @click="openModal(idx)"
         ></div>
       </div>

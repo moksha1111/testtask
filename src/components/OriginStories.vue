@@ -37,8 +37,28 @@ export default {
     };
   },
   mounted() {
-    const cards = [this.$refs.card1, this.$refs.card2, this.$refs.card3];
+    const cards = this.$refs.cardsGrid.querySelectorAll(".card");
+    const videos = Array.isArray(this.$refs.lazyVideo)
+      ? this.$refs.lazyVideo
+      : [this.$refs.lazyVideo];
 
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const video = entry.target;
+          if (entry.isIntersecting) {
+            video.play();
+          } else {
+            video.pause();
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    videos.forEach((video) => {
+      observer.observe(video);
+    });
     cards.forEach((card, index) => {
       gsap.fromTo(
         card,
@@ -79,37 +99,27 @@ export default {
   <section id="originstories">
     <div class="cards-container">
       <div class="cards-grid" ref="cardsGrid">
-        <div class="card" ref="card1" @click="openModal(0)">
-          <video :src="cardsInfo[0].video" muted loop autoplay></video>
+        <div
+          class="card"
+          v-for="(card, idx) in cardsInfo"
+          :key="idx"
+          :ref="'card' + idx"
+          @click="openModal(idx)"
+        >
+          <video
+            :src="card.video"
+            muted
+            loop
+            autoplay
+            preload="none"
+            ref="lazyVideo"
+          ></video>
           <div class="overlay">
-            <h2>
-              {{ cardsInfo[0].fname }} <br />
-              {{ cardsInfo[0].lname }}
-            </h2>
-            <p>{{ cardsInfo[0].role }}</p>
-          </div>
-        </div>
-
-        <div class="card" ref="card2" @click="openModal(1)">
-          <video :src="cardsInfo[1].video" muted loop autoplay></video>
-          <div class="overlay">
-            <h2>
-              {{ cardsInfo[1].fname }} <br />
-              {{ cardsInfo[1].lname }}
-            </h2>
-            <p>{{ cardsInfo[1].role }}</p>
-          </div>
-        </div>
-
-        <div class="card" ref="card3" @click="openModal(2)">
-          <video :src="cardsInfo[2].video" muted loop autoplay></video>
-          <div class="overlay">
-            <h2>{{ cardsInfo[2].fname }} <br />{{ cardsInfo[2].lname }}</h2>
-            <p>{{ cardsInfo[2].role }}</p>
+            <h2>{{ card.fname }} <br />{{ card.lname }}</h2>
+            <p>{{ card.role }}</p>
           </div>
         </div>
       </div>
-
       <!-- Video Modal -->
       <div v-if="modalOpen" class="video-modal" @click.self="closeModal">
         <button class="close-btn" @click="closeModal">&times; close</button>
