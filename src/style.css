@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* overflow: hidden; */
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+:root {
+  --dark: #000;
+  --light: #f9f4eb;
+  --light2: #f0ece5;
+  --accent-1: #e5d9f6;
+  --accent-2: #ffd2f3;
+  --accent-3: #fcdca6;
+}
