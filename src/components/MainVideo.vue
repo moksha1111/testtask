@@ -19,6 +19,21 @@ export default {
     };
   },
   mounted() {
+    const video = this.$refs.lazyVideo;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            video.play(); // start playing when visible
+          } else {
+            video.pause(); // pause when out of view
+          }
+        });
+      },
+      { threshold: 0.5 } // trigger when 50% of video is visible
+    );
+
+    observer.observe(video);
     const cards = [this.$refs.card1];
 
     cards.forEach((card, index) => {
@@ -62,7 +77,14 @@ export default {
     <div class="cards-container">
       <div class="cards-grid" ref="cardsGrid">
         <div class="video-card" ref="card1" @click="openModal(0)">
-          <video :src="cardsInfo[0].video" muted loop autoplay></video>
+          <video
+            :src="cardsInfo[0].video"
+            muted
+            loop
+            autoplay
+            preload="none"
+            ref="lazyVideo"
+          ></video>
         </div>
       </div>
 
@@ -74,6 +96,8 @@ export default {
           controls
           autoplay
           class="modal-video"
+          preload="none"
+          ref="lazyVideo"
         ></video>
         <div class="modal-info" v-if="modalData">
           <p>{{ modalData.phrase }}</p>
