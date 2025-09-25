@@ -1,7 +1,7 @@
 <script>
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import drinking from "../assets/drinking.webm";
+// import drinking from "../assets/drinking.webm";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -12,7 +12,8 @@ export default {
       modalData: null,
       cardsInfo: [
         {
-          video: drinking,
+          video:
+            "https://res.cloudinary.com/dxzt93qkk/video/upload/v1758760035/drinking_ruxxy4.webm",
           phrase: "A NEW PATH FORGED. A MOST REFRESHING DISCOVERY.",
         },
       ],

@@ -1,7 +1,7 @@
 <script>
-import dora from "../assets/dora.jpg";
-import shuri from "../assets/shuri.jpg";
-import mbaku from "../assets/mbaku.jpg";
+// import dora from "../assets/dora.jpg";
+// import shuri from "../assets/shuri.jpg";
+// import mbaku from "../assets/mbaku.jpg";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -12,21 +12,21 @@ export default {
     return {
       cards: [
         {
-          img: dora,
+          img: "https://res.cloudinary.com/dxzt93qkk/image/upload/v1758759770/dora_ipp92i.jpg",
           name: "dora milaje",
           bio: "“i am loyal to that throne, no matter who sits on it.”",
           description:
             "Much can be gleaned from these elites warriors who provide protection and intel to protect the crown and country. Though known for being physically skilled in battle, their minds are also among their greatest weapons-overcoming and embracing adversity and solving problems as quickly as they arise. Do the Dora's gifts reflect yours?",
         },
         {
-          img: shuri,
+          img: "https://res.cloudinary.com/dxzt93qkk/image/upload/v1758760034/shuri_tu1lof.jpg",
           name: "shuri",
           bio: "“just because something works doesn't mean it can't be improved.”",
           description:
             "Both a problem solver and maker by nature, Shuri is a visionary, illuminator, decoder, exlplorer and avant-garde. She's unapologetically bold in her role as a leader across the board- as a master engineer, designer, tech inventor, mathematician, and scientist. Her innovations are of incredible importance to her community. Perhaps when you look at Shuri, you see glimpses of yourself there as well.",
         },
         {
-          img: mbaku,
+          img: "https://res.cloudinary.com/dxzt93qkk/image/upload/v1758760034/mbaku_tv4e1u.jpg",
           name: "m'baku",
           bio: "“witness the strength of the jabari... first-hand!.”",
           description:

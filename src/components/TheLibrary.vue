@@ -1,9 +1,9 @@
 <script>
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import talking4 from "../assets/talking4.mp4";
-import talking5 from "../assets/talking5.mp4";
-import talking6 from "../assets/talking6.mp4";
+// import talking4 from "../assets/talking4.webm";
+// import talking5 from "../assets/talking5.webm";
+// import talking6 from "../assets/talking6.webm";
 gsap.registerPlugin(ScrollTrigger);
 
 export default {
@@ -13,19 +13,22 @@ export default {
       modalData: null,
       cardsInfo: [
         {
-          video: talking4,
+          video:
+            "https://res.cloudinary.com/dxzt93qkk/video/upload/v1758760043/talking2_dhsori.webm",
           fname: "naya",
           lname: null,
           role: "Software Engineer",
         },
         {
-          video: talking5,
+          video:
+            "https://res.cloudinary.com/dxzt93qkk/video/upload/v1758760039/talking6_c279pv.webm",
           fname: "reyna",
           lname: "noriega",
           role: "visual artist & author",
         },
         {
-          video: talking6,
+          video:
+            "https://res.cloudinary.com/dxzt93qkk/video/upload/v1758760038/talking5_ondirp.webm",
           fname: "joan ",
           lname: "marie",
           role: "space engineer",
