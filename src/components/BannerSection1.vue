@@ -52,7 +52,7 @@ onMounted(() => {
   background-color: black;
 }
 .image {
-  background-image: url(/src/assets/spritezero.png);
+  background-image: url("https://res.cloudinary.com/dxzt93qkk/image/upload/v1758761791/spritezero_dha4ad.jpg");
   min-height: 100vh;
   width: 60%;
   background-size: cover;

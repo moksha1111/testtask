@@ -53,7 +53,7 @@ onMounted(() => {
 }
 
 .image2 {
-  background-image: url("../assets/spritezero2.jpg");
+  background-image: url("https://res.cloudinary.com/dxzt93qkk/image/upload/v1758761792/spritezero2_pmdmoy.jpg");
   min-height: 100vh;
   width: 60%;
   background-size: cover;

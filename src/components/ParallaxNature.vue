@@ -44,8 +44,14 @@ onBeforeUnmount(() => {
 
 <template>
   <div class="text">
-    <img src="../assets/spritelogo.png" alt="" />
-    <img src="../assets/wakandalogo.png" alt="" />
+    <img
+      src="https://res.cloudinary.com/dxzt93qkk/image/upload/v1758761790/spritelogo_cqambg.png"
+      alt=""
+    />
+    <img
+      src="https://res.cloudinary.com/dxzt93qkk/image/upload/v1758761793/wakandalogo_cofbtz.png"
+      alt=""
+    />
     <h2>Sprite Zero Sugar<span class="small"> Ⓡ </span>| ⓒ MARVEL</h2>
   </div>
   <section id="welcome">
@@ -108,18 +114,42 @@ onBeforeUnmount(() => {
   </section>
 
   <div class="parralax">
-    <img src="../assets/hill1.png" id="hill1" />
-    <img src="../assets/hill2.png" id="hill2" />
-    <img src="../assets/hill3.png" id="hill3" />
-    <img src="../assets/hill4.png" id="hill4" />
-    <img src="../assets/hill5.png" id="hill5" />
-    <img src="../assets/tree.png" id="tree" />
+    <img
+      src="https://res.cloudinary.com/dxzt93qkk/image/upload/v1758761794/hill1_j5vou0.png"
+      id="hill1"
+    />
+    <img
+      src="https://res.cloudinary.com/dxzt93qkk/image/upload/v1758761794/hill2_xgvcuu.png"
+      id="hill2"
+    />
+    <img
+      src="https://res.cloudinary.com/dxzt93qkk/image/upload/v1758761795/hill3_s7ybku.png"
+      id="hill3"
+    />
+    <img
+      src="https://res.cloudinary.com/dxzt93qkk/image/upload/v1758761789/hill4_l87ptx.png"
+      id="hill4"
+    />
+    <img
+      src="https://res.cloudinary.com/dxzt93qkk/image/upload/v1758761790/hill5_veffaq.png"
+      id="hill5"
+    />
+    <img
+      src="https://res.cloudinary.com/dxzt93qkk/image/upload/v1758761793/tree_amszta.png"
+      id="tree"
+    />
     <h2 class="welcomemsg" id="text">
       exlpore new paths <br />
       find your gift
     </h2>
-    <img src="../assets/leaf.png" id="leaf" />
-    <img src="../assets/plant.png" id="plant" />
+    <img
+      src="https://res.cloudinary.com/dxzt93qkk/image/upload/v1758761790/leaf_zcntmj.png"
+      id="leaf"
+    />
+    <img
+      src="https://res.cloudinary.com/dxzt93qkk/image/upload/v1758761790/plant_cbzs9s.png"
+      id="plant"
+    />
   </div>
 </template>
 
