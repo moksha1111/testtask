@@ -1,12 +1,12 @@
 <template>
-  <section id="bannersection2">
+  <section v-for="(banner, idx) in banners" :key="idx" :id="banner.id">
     <div class="background2">
-      <div class="image2"></div>
+      <div
+        class="image2"
+        :style="{ backgroundImage: `url(${banner.img})` }"
+      ></div>
       <div class="sprite-text2">
-        <h1>
-          zero <br />
-          limits
-        </h1>
+        <h1>{{ banner.text }}</h1>
       </div>
     </div>
   </section>
@@ -16,24 +16,30 @@
 import { onMounted } from "vue";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-
+const banners = [
+  {
+    id: "bannersection2",
+    img: "https://res.cloudinary.com/dxzt93qkk/image/upload/v1758761792/spritezero2_pmdmoy.jpg",
+    text: "zero\nlimits",
+  },
+];
 gsap.registerPlugin(ScrollTrigger);
 
 onMounted(() => {
   gsap.from(".image2", {
-    x: "-100%", // start completely off-screen left
+    x: "-100%",
     opacity: 0,
     duration: 1.5,
     scrollTrigger: {
       trigger: ".background2",
-      start: "top bottom", // when the background enters the viewport
+      start: "top bottom",
       end: "center center",
-      scrub: true, // smooth scroll animation
+      scrub: true,
     },
   });
 
   gsap.from(".sprite-text2", {
-    x: "100%", // off-screen right
+    x: "100%",
     opacity: 0,
     duration: 1.5,
     scrollTrigger: {

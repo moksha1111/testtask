@@ -1,7 +1,6 @@
 <script>
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-// import drinking from "../assets/drinking.webm";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -25,13 +24,13 @@ export default {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            video.play(); // start playing when visible
+            video.play();
           } else {
-            video.pause(); // pause when out of view
+            video.pause();
           }
         });
       },
-      { threshold: 0.5 } // trigger when 50% of video is visible
+      { threshold: 0.5 }
     );
 
     observer.observe(video);

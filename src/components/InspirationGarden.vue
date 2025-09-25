@@ -1,7 +1,4 @@
 <script>
-// import dora from "../assets/dora.jpg";
-// import shuri from "../assets/shuri.jpg";
-// import mbaku from "../assets/mbaku.jpg";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -61,7 +58,7 @@ export default {
             if (bg) {
               el.style.backgroundImage = `url(${bg})`;
               el.classList.remove("lazy-bg");
-              obs.unobserve(el); // stop watching after load
+              obs.unobserve(el);
             }
           }
         });
@@ -75,7 +72,7 @@ export default {
         skewX: 20,
         x: -100,
         opacity: 0,
-        scale: 0.8, // start smaller
+        scale: 0.8,
         duration: 2,
         ease: "power3.out",
         scrollTrigger: {
@@ -204,11 +201,11 @@ export default {
   text-align: center;
   clip-path: polygon(
     50px 0%,
-    /* Top-left inward cut */ 100% 0%,
-    /* Top-right */ 100% calc(100% - 50px),
-    /* Before bottom-right cut */ calc(100% - 50px) 100%,
-    /* Bottom-right inward cut */ 0% 100%,
-    /* Bottom-left */ 0% 50px /* Back to top-left vertical */
+    100% 0%,
+    100% calc(100% - 50px),
+    calc(100% - 50px) 100%,
+    0% 100%,
+    0% 50px
   );
 }
 

@@ -146,11 +146,11 @@ function closeModal() {
   text-align: center;
   clip-path: polygon(
     50px 0%,
-    /* Top-left inward cut */ 100% 0%,
-    /* Top-right */ 100% calc(100% - 50px),
-    /* Before bottom-right cut */ calc(100% - 50px) 100%,
-    /* Bottom-right inward cut */ 0% 100%,
-    /* Bottom-left */ 0% 50px /* Back to top-left vertical */
+    100% 0%,
+    100% calc(100% - 50px),
+    calc(100% - 50px) 100%,
+    0% 100%,
+    0% 50px
   );
 }
 
@@ -218,12 +218,11 @@ function closeModal() {
   transition: transform 0.5s, background-color 0.5s;
   clip-path: polygon(
     0% 0%,
-    /* Top-left */ calc(118% - 50px) 0%,
-    /* Top-right inward cut */ 118% 50px,
-    /* Down to complete top-right cut */ 100% 100%,
-    /* Bottom-right */ 50px 175%,
-    /* Bottom-left inward cut */ 0% calc(175% - 50px)
-      /* Up to complete bottom-left cut */
+    calc(118% - 50px) 0%,
+    118% 50px,
+    100% 100%,
+    50px 175%,
+    0% calc(175% - 50px)
   );
 }
 

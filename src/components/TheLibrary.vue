@@ -1,9 +1,6 @@
 <script>
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-// import talking4 from "../assets/talking4.webm";
-// import talking5 from "../assets/talking5.webm";
-// import talking6 from "../assets/talking6.webm";
 gsap.registerPlugin(ScrollTrigger);
 
 export default {

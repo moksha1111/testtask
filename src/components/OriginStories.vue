@@ -1,9 +1,6 @@
 <script>
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-// import talking1 from "../assets/talking1.webm";
-// import talking2 from "../assets/talking2.webm";
-// import talking3 from "../assets/talking3.webm";
 gsap.registerPlugin(ScrollTrigger);
 
 export default {
@@ -123,7 +120,6 @@ export default {
           </div>
         </div>
       </div>
-      <!-- Video Modal -->
       <div v-if="modalOpen" class="video-modal" @click.self="closeModal">
         <button class="close-btn" @click="closeModal">&times; close</button>
         <video
